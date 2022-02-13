@@ -8,5 +8,8 @@ namespace PlantReminder.Models
 
     public string name {get; set;}
 
+    public int waterInterval {get; set;}
+
+    public string lastWatered {get; set;}
   }
 }
