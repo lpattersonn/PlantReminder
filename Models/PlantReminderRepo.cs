@@ -11,11 +11,11 @@ namespace PlantReminder.Models
 
     public PlantReminderRepo()
     {
-      Add(new PlantModel {name= "Ageratum"});
-      // Add(new PlantModel {id= 2, name= "American Marigold", LastWatered= DateTime.Now.ToString()});
-      // Add(new PlantModel {id= 3, name= "Annual Vinca", LastWatered= DateTime.Now.ToString()});
-      // Add(new PlantModel {id= 4, name= "Bacopa", LastWatered= DateTime.Now.ToString()});
-      // Add(new PlantModel {id= 5, name= "Balloon Flower", LastWatered= DateTime.Now.ToString()});
+      Add(new PlantModel {name= "Ageratum", img = "https://extension.umass.edu/plant-identification/sites/plant-identification/files/styles/50x50/public/plant/images/Ageratum%201%20Plant.jpg?itok=hLwxwbOg"});
+      Add(new PlantModel {name= "American Marigold", img="https://extension.umass.edu/plant-identification/sites/plant-identification/files/styles/50x50/public/plant/images/Tagetes%201%20plant_0.jpg?itok=aOuGLGdU"});
+      Add(new PlantModel {name= "Annual Vinca", img="https://extension.umass.edu/plant-identification/sites/plant-identification/files/styles/50x50/public/plant/images/Catharanthus%201%20plant.JPG?itok=_xH4O5fg"});
+      Add(new PlantModel {name= "Bacopa", img="https://extension.umass.edu/plant-identification/sites/plant-identification/files/styles/50x50/public/plant/images/Sutera%20plant%201_0.JPG?itok=dSMziocv"});
+      Add(new PlantModel {name= "Balloon Flower", img="https://extension.umass.edu/plant-identification/sites/plant-identification/files/styles/50x50/public/plant/images/Platycodon%201%20plant.jpg?itok=g0uX8NlE"});
     }
       // Return all palnts
       public IEnumerable<PlantModel> GetAll()
