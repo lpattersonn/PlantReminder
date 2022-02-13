@@ -28,7 +28,7 @@ export default class App extends Component {
         <section className="nav">
           <Header />
         </section>
-        <section>
+        <section className="plantTable">
           <Plants plants={this.state.plants} />
         </section>
       </div>

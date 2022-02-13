@@ -1,16 +1,30 @@
+/* Nav */
 .nav {
   margin-top: 1em;
-  margin-bottom: 1em;
+  margin-bottom: 11em;
   border-bottom: 1px solid rgb(209, 209, 209);
   display: flex;
-    justify-content: center;
+  justify-content: center;
 }
-/* Plant table */
-table {
 
+/* Plant table */
+.plantTable {
+  display: flex;
+  justify-content: center;
+}
+
+table td,
+th,
+tr {
+  border: 1px solid rgb(209, 209, 209);
+  padding: 1em;
+}
+
+table {
+  width: 50%;
 }
 
 img {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
 }

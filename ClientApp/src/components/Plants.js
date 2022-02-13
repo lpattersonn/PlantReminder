@@ -17,7 +17,7 @@ export default function Plants(props) {
     <table>
       <thead>
         <tr>
-          <th rowSpan="2">Plant</th>
+          <th>Plants</th>
         </tr>
       </thead>
       <tbody>{plantList}</tbody>
