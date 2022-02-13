@@ -8,19 +8,21 @@ import "./custom.css";
 
 // App
 export default class App extends Component {
-
+  
   constructor(props) {
     super(props);
     this.state = {
-    plants: [],
-    }
+      plants: [],
+    };
   }
 
   componentDidMount() {
-    fetch('https://localhost:5001/api/plants')
-    .then(res => res.json())
-      .then(plants => {this.setState({ plants: plants })});
-  };
+    fetch("/api/plants")
+      .then((res) => res.json())
+      .then((plants) => {
+        this.setState({ plants: plants });
+      });
+  }
 
   render() {
     return (
