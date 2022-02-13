@@ -11,11 +11,11 @@ namespace PlantReminder.Models
 
     public PlantReminderRepo()
     {
-      Add(new PlantModel {name= "Ageratum", waterInterval= 21600, lastWatered= "Friday, Feburary 11, 2022 3:40:23 PM", img = "https://extension.umass.edu/plant-identification/sites/plant-identification/files/styles/50x50/public/plant/images/Ageratum%201%20Plant.jpg?itok=hLwxwbOg"});
-      Add(new PlantModel {name= "American Marigold", waterInterval= 21600, lastWatered= "Friday, Feburary 11, 2022 3:40:23 PM", img="https://extension.umass.edu/plant-identification/sites/plant-identification/files/styles/50x50/public/plant/images/Tagetes%201%20plant_0.jpg?itok=aOuGLGdU"});
-      Add(new PlantModel {name= "Annual Vinca", waterInterval= 21600, lastWatered= "Friday, Feburary 11, 2022 3:40:23 PM", img="https://extension.umass.edu/plant-identification/sites/plant-identification/files/styles/50x50/public/plant/images/Catharanthus%201%20plant.JPG?itok=_xH4O5fg"});
-      Add(new PlantModel {name= "Bacopa", waterInterval= 21600, lastWatered= "Friday, Feburary 11, 2022 3:40:23 PM", img="https://extension.umass.edu/plant-identification/sites/plant-identification/files/styles/50x50/public/plant/images/Sutera%20plant%201_0.JPG?itok=dSMziocv"});
-      Add(new PlantModel {name= "Balloon Flower", waterInterval= 21600, lastWatered= "Friday, Feburary 11, 2022 3:40:23 PM", img="https://extension.umass.edu/plant-identification/sites/plant-identification/files/styles/50x50/public/plant/images/Platycodon%201%20plant.jpg?itok=g0uX8NlE"});
+      Add(new PlantModel {name= "Ageratum", waterInterval= 21600, lastWatered= new DateTime(2022, 2, 11), img = "https://extension.umass.edu/plant-identification/sites/plant-identification/files/styles/50x50/public/plant/images/Ageratum%201%20Plant.jpg?itok=hLwxwbOg"});
+      Add(new PlantModel {name= "American Marigold", waterInterval= 21600, lastWatered= new DateTime(2022, 2, 11), img="https://extension.umass.edu/plant-identification/sites/plant-identification/files/styles/50x50/public/plant/images/Tagetes%201%20plant_0.jpg?itok=aOuGLGdU"});
+      Add(new PlantModel {name= "Annual Vinca", waterInterval= 21600, lastWatered= new DateTime(2022, 2, 11), img="https://extension.umass.edu/plant-identification/sites/plant-identification/files/styles/50x50/public/plant/images/Catharanthus%201%20plant.JPG?itok=_xH4O5fg"});
+      Add(new PlantModel {name= "Bacopa", waterInterval= 21600, lastWatered= new DateTime(2022, 2, 11), img="https://extension.umass.edu/plant-identification/sites/plant-identification/files/styles/50x50/public/plant/images/Sutera%20plant%201_0.JPG?itok=dSMziocv"});
+      Add(new PlantModel {name= "Balloon Flower", waterInterval= 21600, lastWatered= new DateTime(2022, 2, 11), img="https://extension.umass.edu/plant-identification/sites/plant-identification/files/styles/50x50/public/plant/images/Platycodon%201%20plant.jpg?itok=g0uX8NlE"});
     }
       // Return all palnts
       public IEnumerable<PlantModel> GetAll()

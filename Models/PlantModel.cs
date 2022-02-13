@@ -1,3 +1,4 @@
+
 namespace PlantReminder.Models
 {
   public class PlantModel
@@ -8,8 +9,8 @@ namespace PlantReminder.Models
 
     public string name {get; set;}
 
-    public int waterInterval {get; set;}
+    public int waterInterval { get; set; }
 
-    public string lastWatered {get; set;}
+    public System.DateTime lastWatered { get; set; }
   }
 }
