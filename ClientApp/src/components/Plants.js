@@ -10,7 +10,7 @@ export default function Plants(props) {
     function toString(watered) {
       const todaysDate = new Date(watered + "Z");
       console.log(todaysDate.getTime());
-      return todaysDate.toUTCString();
+      return todaysDate.toLocaleString();
     }
 
     // Check if plant is well watered
