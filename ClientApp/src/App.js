@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Route } from "react-router";
 import Header from "./components/Header.js";
 import Plants from "./components/Plants.js";
+import Form from "./components/Form.js";
 import axios from "axios";
 
 import "./custom.css";
@@ -27,7 +28,7 @@ export default function App() {
     const day = new Date();
     updatedPlant.lastWatered = day.toISOString().split("Z")[0];
     plants[updatedIndex] = updatedPlant;
-    setPlants([...plants]);
+    return setPlants([...plants]);
     console.log(plants);
   };
 
@@ -36,8 +37,12 @@ export default function App() {
       <section className="nav">
         <Header />
       </section>
+      <section className="formSection">
+      <h4>Add Plant</h4>
+      <Form />
+      </section>
       <section className="plantTable">
-        <Plants  plants={plants} waterPlant={waterPlant} />
+        <Plants key={plants} plants={plants} waterPlant={waterPlant} />
       </section>
     </div>
   );

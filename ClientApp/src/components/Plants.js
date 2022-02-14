@@ -22,6 +22,10 @@ export default function Plants(props) {
     }
     const id = plant.id;
     function plantButton(waterInterval, lastWatered) {
+      const today = new Date();
+      const todaysDate = new Date(lastWatered + "Z");
+      const diffInSec = today.getTime() - todaysDate.getTime();
+
       if (wellWatered(waterInterval, lastWatered)) {
         return (
           <button
@@ -30,12 +34,11 @@ export default function Plants(props) {
             onClick={() => {
               props.waterPlant(props.plants, id);
             }}
-            onChange={() => setPlants([...plants])}
           >
             Water Me! 😠
           </button>
         );
-      } else if (plant.) {
+      } else {
         return (
           <button type="button" className="btn btn-success">
             I'm Full! 😀
@@ -61,7 +64,7 @@ export default function Plants(props) {
     };
 
     return (
-      <tr style={waterStatus} key={plant.id}>
+      <tr style={waterStatus}>
         <td>
           <img src={plant.img} alt={plant.name} />
         </td>
