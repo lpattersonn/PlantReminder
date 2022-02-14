@@ -1,8 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
 export default function Plants(props) {
-
-  const {state, setState} = useState
+  const { plants, setPlants } = useState([]);
 
   const plantList = props.plants.map((plant) => {
     // Todays date
@@ -11,7 +10,6 @@ export default function Plants(props) {
     // Date from api
     function toString(watered) {
       const todaysDate = new Date(watered + "Z");
-      console.log(todaysDate.getTime());
       return todaysDate.toLocaleString();
     }
 
@@ -20,34 +18,31 @@ export default function Plants(props) {
       const today = new Date();
       const todaysDate = new Date(lastWatered + "Z");
       const diffInSec = today.getTime() - todaysDate.getTime();
-      console.log(lastWatered);
       return diffInSec / 1000 > waterInterval;
     }
- 
-    // Plant button
-    function waterPlant() {
-      var day = new Date()
-  
-          plant.lastWatered = day.toISOString().split('Z')[0];
-        
-    }
-
-    function plantButton(waterInterval, lastWatered, plant) {
+    const id = plant.id;
+    function plantButton(waterInterval, lastWatered) {
       if (wellWatered(waterInterval, lastWatered)) {
         return (
-          <button type="button" class="btn btn-danger" onClick={() => waterPlant()}>
+          <button
+            type="button"
+            className="btn btn-danger"
+            onClick={() => {
+              props.waterPlant(props.plants, id);
+            }}
+            onChange={() => setPlants([...plants])}
+          >
             Water Me! 😠
           </button>
         );
-      } else {
+      } else if (plant.) {
         return (
-          <button type="button" class="btn btn-success">
+          <button type="button" className="btn btn-success">
             I'm Full! 😀
           </button>
         );
       }
     }
-
 
     // Table row style
     const waterStatus = {
@@ -66,14 +61,16 @@ export default function Plants(props) {
     };
 
     return (
-      <tr style={waterStatus}>
+      <tr style={waterStatus} key={plant.id}>
         <td>
           <img src={plant.img} alt={plant.name} />
         </td>
         <td style={waterStatus}>{plant.name}</td>
         <td style={waterStatus}>{toString(plant.lastWatered)}</td>
         <td className="waterplants-button">
-        <button type="button" class="btn btn-secondary">Remove Plant  😔</button>
+          <button type="button" className="btn btn-secondary">
+            Remove Plant 😔
+          </button>
         </td>
         <td className="waterplants-button" style={waterButtonStatus}>
           {plantButton(plant.waterInterval, plant.lastWatered)}
@@ -91,8 +88,8 @@ export default function Plants(props) {
           <th>Last Watered</th>
           <th>Remove Plant</th>
           <th className="waterplants-button">
-            <button type="button" class="btn btn-dark">
-              Water All Plants  😍
+            <button type="button" className="btn btn-dark">
+              Water All Plants 😍
             </button>
           </th>
         </tr>
