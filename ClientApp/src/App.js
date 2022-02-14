@@ -12,6 +12,8 @@ import { getAllPlants } from "./helper/helper.js";
 // App
 export default function App() {
   const [plants, setPlants] = useState([]);
+
+
   useEffect(() => {
     axios.get("/api/plants").then((res) => {
       setPlants(res.data);
@@ -28,21 +30,30 @@ export default function App() {
     const day = new Date();
     updatedPlant.lastWatered = day.toISOString().split("Z")[0];
     plants[updatedIndex] = updatedPlant;
-    return setPlants([...plants]);
+    setPlants([...plants]);
     console.log(plants);
   };
+
+  // Water all plants
+
+  const waterAllPlants = function (plants) {
+    const waterPlants = plants.map((plant) => {
+      const id = plant.id
+      return waterPlant(plants, id)
+    })
+  }
 
   return (
     <div>
       <section className="nav">
-        <Header />
+        <Header key={plants} />
       </section>
       <section className="formSection">
       <h4>Add Plant</h4>
-      <Form />
+      <Form key={plants} />
       </section>
       <section className="plantTable">
-        <Plants key={plants} plants={plants} waterPlant={waterPlant} />
+        <Plants key={plants} plants={plants} waterPlant={waterPlant} waterAllPlants={waterAllPlants} />
       </section>
     </div>
   );

@@ -20,11 +20,10 @@ export default function Plants(props) {
       const diffInSec = today.getTime() - todaysDate.getTime();
       return diffInSec / 1000 > waterInterval;
     }
+
     const id = plant.id;
+
     function plantButton(waterInterval, lastWatered) {
-      const today = new Date();
-      const todaysDate = new Date(lastWatered + "Z");
-      const diffInSec = today.getTime() - todaysDate.getTime();
 
       if (wellWatered(waterInterval, lastWatered)) {
         return (
@@ -91,7 +90,7 @@ export default function Plants(props) {
           <th>Last Watered</th>
           <th>Remove Plant</th>
           <th className="waterplants-button">
-            <button type="button" className="btn btn-dark">
+            <button type="button" className="btn btn-dark" onClick={() => {props.waterAllPlants(props.plants)}}>
               Water All Plants 😍
             </button>
           </th>

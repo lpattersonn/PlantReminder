@@ -14,7 +14,7 @@ export default function Form() {
           class="form-control"
           id="text"
           placeholder="Image Adress"
-          value=""
+          
         />
       </div>
       <div className="form-group mx-sm-3 mb-2">
