@@ -1,6 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 
 export default function Plants(props) {
+
+  const {state, setState} = useState
+
   const plantList = props.plants.map((plant) => {
     // Todays date
     const today = new Date();
@@ -20,13 +23,20 @@ export default function Plants(props) {
       console.log(lastWatered);
       return diffInSec / 1000 > waterInterval;
     }
-
+ 
     // Plant button
-    function plantButton(waterInterval, lastWatered) {
+    function waterPlant() {
+      var day = new Date()
+  
+          plant.lastWatered = day.toISOString().split('Z')[0];
+        
+    }
+
+    function plantButton(waterInterval, lastWatered, plant) {
       if (wellWatered(waterInterval, lastWatered)) {
         return (
-          <button type="button" class="btn btn-danger">
-            Water Me! 😡
+          <button type="button" class="btn btn-danger" onClick={() => waterPlant()}>
+            Water Me! 😠
           </button>
         );
       } else {
@@ -37,6 +47,7 @@ export default function Plants(props) {
         );
       }
     }
+
 
     // Table row style
     const waterStatus = {
@@ -80,7 +91,7 @@ export default function Plants(props) {
           <th>Last Watered</th>
           <th>Remove Plant</th>
           <th className="waterplants-button">
-            <button type="button" class="btn btn-primary">
+            <button type="button" class="btn btn-dark">
               Water All Plants  😍
             </button>
           </th>

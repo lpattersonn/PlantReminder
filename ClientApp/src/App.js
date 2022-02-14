@@ -1,39 +1,34 @@
 // Imports
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Route } from "react-router";
 import Header from "./components/Header.js";
 import Plants from "./components/Plants.js";
+import axios from 'axios';
 
 import "./custom.css";
+import { getAllPlants } from "./helper/helper.js";
 
 // App
-export default class App extends Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = {
-      plants: [],
-    };
-  }
+export default function App() {
+  const [plants, setPlants] = useState([]);
 
-  componentDidMount() {
-    fetch("/api/plants")
-      .then((res) => res.json())
-      .then((plants) => {
-        this.setState({ plants: plants });
-      });
-  }
+  console.log(plants)
 
-  render() {
-    return (
-      <div>
-        <section className="nav">
-          <Header />
-        </section>
-        <section className="plantTable">
-          <Plants plants={this.state.plants} />
-        </section>
-      </div>
-    );
-  }
+  useEffect(() => {
+    axios.get("/api/plants")
+    .then((res) => {
+      setPlants(res.data)
+    })
+  }, [])
+
+  return (
+    <div>
+      <section className="nav">
+        <Header />
+      </section>
+      <section className="plantTable">
+        <Plants plants={plants} />
+      </section>
+    </div>
+  );
 }
