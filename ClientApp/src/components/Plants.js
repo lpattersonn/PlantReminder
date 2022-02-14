@@ -21,15 +21,6 @@ export default function Plants(props) {
       return diffInSec / 1000 > waterInterval;
     }
 
-    // Table row style
-    const waterStatus = {
-      paddingBottom: "30px",
-      border: "0.2em solid black",
-      borderColor: wellWatered(plant.waterInterval, plant.lastWatered)
-        ? "#E6534E"
-        : "#74E64E",
-    };
-
     // Plant button
     function plantButton(waterInterval, lastWatered) {
       if (wellWatered(waterInterval, lastWatered)) {
@@ -47,6 +38,22 @@ export default function Plants(props) {
       }
     }
 
+    // Table row style
+    const waterStatus = {
+      paddingBottom: "30px",
+      border: "0.2em solid black",
+      borderColor: wellWatered(plant.waterInterval, plant.lastWatered)
+        ? "#E6534E"
+        : "#74E64E",
+    };
+
+    const waterButtonStatus = {
+      border: "0.2em solid black",
+      borderColor: wellWatered(plant.waterInterval, plant.lastWatered)
+        ? "#E6534E"
+        : "#74E64E",
+    };
+
     return (
       <tr style={waterStatus}>
         <td>
@@ -57,7 +64,7 @@ export default function Plants(props) {
         <td className="waterplants-button">
         <button type="button" class="btn btn-secondary">Remove Plant</button>
         </td>
-        <td className="waterplants-button">
+        <td className="waterplants-button" style={waterButtonStatus}>
           {plantButton(plant.waterInterval, plant.lastWatered)}
         </td>
       </tr>
