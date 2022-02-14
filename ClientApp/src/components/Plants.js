@@ -28,6 +28,15 @@ export default function Plants(props) {
       borderColor: wellWatered(plant.waterInterval, plant.lastWatered) ? "#E6534E" : "#74E64E",
     };
 
+    // Plant button
+    function plantButton(waterInterval, lastWatered) {
+      if (wellWatered(waterInterval, lastWatered)) {
+        return <button type="button" class="btn btn-danger">Water Me!</button>
+      } else {
+        return <button type="button" class="btn btn-success">I'm Full!</button>
+      }
+    }
+
     return (
       <tr style={waterStatus}>
         <td>
@@ -36,7 +45,7 @@ export default function Plants(props) {
         <td style={waterStatus}>{plant.name}</td>
         <td style={waterStatus}>{toString(plant.lastWatered)}</td>
         <td className="waterplants-button">
-          <button>Water Me</button>
+          {plantButton(plant.waterInterval, plant.lastWatered)}
         </td>
       </tr>
     );
@@ -50,7 +59,7 @@ export default function Plants(props) {
           <th>Plant Name</th>
           <th>Last Watered</th>
           <th className="waterplants-button">
-            <button>Water All Plants</button>
+          <button type="button" class="btn btn-dark">Water All Plants</button>
           </th>
         </tr>
       </thead>
