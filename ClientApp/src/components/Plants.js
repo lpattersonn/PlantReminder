@@ -26,13 +26,13 @@ export default function Plants(props) {
       if (wellWatered(waterInterval, lastWatered)) {
         return (
           <button type="button" class="btn btn-danger">
-            Water Me!
+            Water Me! 😡
           </button>
         );
       } else {
         return (
           <button type="button" class="btn btn-success">
-            I'm Full!
+            I'm Full! 😀
           </button>
         );
       }
@@ -62,7 +62,7 @@ export default function Plants(props) {
         <td style={waterStatus}>{plant.name}</td>
         <td style={waterStatus}>{toString(plant.lastWatered)}</td>
         <td className="waterplants-button">
-        <button type="button" class="btn btn-secondary">Remove Plant</button>
+        <button type="button" class="btn btn-secondary">Remove Plant  😔</button>
         </td>
         <td className="waterplants-button" style={waterButtonStatus}>
           {plantButton(plant.waterInterval, plant.lastWatered)}
@@ -81,7 +81,7 @@ export default function Plants(props) {
           <th>Remove Plant</th>
           <th className="waterplants-button">
             <button type="button" class="btn btn-primary">
-              Water All Plants
+              Water All Plants  😍
             </button>
           </th>
         </tr>
