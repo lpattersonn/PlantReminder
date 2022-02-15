@@ -7,7 +7,7 @@
     <!-- <img src="https://media.istockphoto.com/vectors/quiz-in-comic-pop-art-style-quiz-brainy-game-word-vector-illustration-vector-id1186386668?k=20&m=1186386668&s=612x612&w=0&h=tUvqWXoNa2OsJ1YsvZwr3JKOggtzfr_KHuopigindPA=" alt="midterm_group_5" alt="Logo" width="350" height="300"> -->
   </a>
 
-  <h3 align="center">Plant Reminder</h3>
+  <h1 align="center">Plant Reminder</h1>
 
   <p align="center">
     plant Reminder is a .Net Core (Web API) solution with a React front-end that enables a user to water plants remotely.
