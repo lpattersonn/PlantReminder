@@ -47,6 +47,7 @@
 </details>
 
 <!-- ABOUT THE PROJECT -->
+
 ## About The Project
 
 plant Reminder is a .Net Core (Web API) solution with a React front-end that enables a user to water plants remotely.
@@ -59,18 +60,19 @@ plant Reminder is a .Net Core (Web API) solution with a React front-end that ena
 
 ### Built With
 
-* [.Net Core](https://nodejs.org/en/docs/es6/)
-* [React](https://nodejs.org/en/)
+- [.Net Core](https://nodejs.org/en/docs/es6/)
+- [React](https://nodejs.org/en/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
+
 ## Getting Started
 
 ### Installation
 
 2. Clone the repo
-   ```sh 
+   ```sh
    git clone https://github.com/lpattersonn/PlantReminder.git
    ```
 3. Install NPM packages
@@ -79,16 +81,17 @@ plant Reminder is a .Net Core (Web API) solution with a React front-end that ena
    ```
 4. In your terminal while in the cloned project enter the following command
    ```sh
-   dotnet run local
+   dotnet run
    ```
 5. After the server has initiated use http://localhost:5001 in the browser for the project to show.
-   
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ROADMAP -->
+
 ## Roadmap
 
-- [ ] Delete Plant Button
+- [ ] Implement delete Plant Button
 
 See the [open issues](https://github.com/lpattersonn/PlantReminder/issues) for a full list of proposed features (and known issues).
 
@@ -108,6 +111,7 @@ Don't forget to give the project a star! Thanks again!
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- CONTACT -->
+
 ## Contact
 
 Leshan Patterson - [@lpatters](https://ca.linkedin.com/in/lpatters)
@@ -117,9 +121,10 @@ Project Link: [https://github.com/lpattersonn/PlantReminder.git](https://github.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ACKNOWLEDGMENTS -->
+
 ## Acknowledgmentsd
 
-* [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
+- [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
+- [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
