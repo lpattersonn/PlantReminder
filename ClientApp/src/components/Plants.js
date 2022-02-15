@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
 export default function Plants(props) {
-  const { plants, setPlants } = useState([]);
-
   const plantList = props.plants.map((plant) => {
     // Todays date
     const today = new Date();
@@ -24,7 +22,6 @@ export default function Plants(props) {
     const id = plant.id;
 
     function plantButton(waterInterval, lastWatered) {
-
       if (wellWatered(waterInterval, lastWatered)) {
         return (
           <button
@@ -39,7 +36,13 @@ export default function Plants(props) {
         );
       } else {
         return (
-          <button type="button" className="btn btn-success">
+          <button
+            type="button"
+            className="btn btn-success"
+            onClick={() => {
+              props.waterPlant(props.plants, id);
+            }}
+          >
             I'm Full! 😀
           </button>
         );
@@ -70,7 +73,13 @@ export default function Plants(props) {
         <td style={waterStatus}>{plant.name}</td>
         <td style={waterStatus}>{toString(plant.lastWatered)}</td>
         <td className="waterplants-button">
-          <button type="button" className="btn btn-secondary">
+          <button
+            type="button"
+            className="btn btn-secondary"
+            onClick={() => {
+              props.deletePlant(plant.id);
+            }}
+          >
             Remove Plant 😔
           </button>
         </td>
@@ -90,7 +99,13 @@ export default function Plants(props) {
           <th>Last Watered</th>
           <th>Remove Plant</th>
           <th className="waterplants-button">
-            <button type="button" className="btn btn-dark" onClick={() => {props.waterAllPlants(props.plants)}}>
+            <button
+              type="button"
+              className="btn btn-dark"
+              onClick={() => {
+                props.waterAllPlants(props.plants);
+              }}
+            >
               Water All Plants 😍
             </button>
           </th>

@@ -13,7 +13,6 @@ import { getAllPlants } from "./helper/helper.js";
 export default function App() {
   const [plants, setPlants] = useState([]);
 
-
   useEffect(() => {
     axios.get("/api/plants").then((res) => {
       setPlants(res.data);
@@ -22,6 +21,8 @@ export default function App() {
       "Searching";
     };
   }, []);
+
+  // Delete plant
 
   // Plant button
   const waterPlant = function (plants, id) {
@@ -35,25 +36,29 @@ export default function App() {
   };
 
   // Water all plants
-
   const waterAllPlants = function (plants) {
     const waterPlants = plants.map((plant) => {
-      const id = plant.id
-      return waterPlant(plants, id)
-    })
-  }
+      const id = plant.id;
+      return waterPlant(plants, id);
+    });
+  };
 
   return (
     <div>
       <section className="nav">
-        <Header key={plants} />
+        <Header key={1} />
       </section>
       <section className="formSection">
-      <h4>Add Plant</h4>
-      <Form key={plants} />
+        <h4>Add Plant</h4>
+        <Form key={2} plants={plants} setPlants={setPlants} />
       </section>
       <section className="plantTable">
-        <Plants key={plants} plants={plants} waterPlant={waterPlant} waterAllPlants={waterAllPlants} />
+        <Plants
+          key={3}
+          plants={plants}
+          waterPlant={waterPlant}
+          waterAllPlants={waterAllPlants}
+        />
       </section>
     </div>
   );
