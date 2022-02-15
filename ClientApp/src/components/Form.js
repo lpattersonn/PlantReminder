@@ -3,12 +3,17 @@ import React, { useState } from "react";
 import axios from "axios";
 
 export default function Form(props) {
-  const [form, setForm] = useState({});
+  const [form, setForm] = useState({
+    img: "",
+    name: "",
+    waterInterval: 21600,
+    lastWatered: new Date(),
+  });
 
   const handleEmailChange = (e) => {
     setForm({
-      [e.target.name]: e.target.value,
       [e.target.img]: e.target.value,
+      [e.target.name]: e.target.value,
       waterInterval: 21600,
       lastWatered: new Date(),
     });
@@ -17,13 +22,14 @@ export default function Form(props) {
   const handleSubmit = (e) => {
     e.preventDefault();
     const today = new Date();
-    const todaysTime = today
-  
-    console.log(typeof today)
+    const todaysTime = today;
+
+    console.log(typeof today);
+
     axios
       .post("/api/plant", {
-        [e.target.name]: e.target.value,
-        [e.target.img]: e.target.value,
+        name: form.name,
+        img: form.img,
         waterInterval: 21600,
         lastWatered: new Date(),
       })
@@ -43,7 +49,7 @@ export default function Form(props) {
           <input
             type="text"
             name="img"
-            value={props.plants.img}
+            value={form.img}
             onChange={handleEmailChange}
             class="form-control"
             id="text"
@@ -57,7 +63,7 @@ export default function Form(props) {
           <input
             type="text"
             name="name"
-            value={props.plants.name}
+            value={form.name}
             onChange={handleEmailChange}
             class="form-control"
             id="inputPassword2"
