@@ -53,7 +53,7 @@ export default function Form(props) {
             onChange={handleEmailChange}
             class="form-control"
             id="text"
-            placeholder="Image Adress"
+            placeholder="Enter Image Adress"
           />
         </div>
         <div className="form-group mx-sm-3 mb-2">
@@ -67,7 +67,7 @@ export default function Form(props) {
             onChange={handleEmailChange}
             class="form-control"
             id="inputPassword2"
-            placeholder="Plant Name"
+            placeholder="Enter Plant Name"
           />
         </div>
         <button type="submit" class="btn btn-dark mb-2" disabled={form.img.length<1 || form.name.length<1}>

@@ -25,25 +25,28 @@ export default function App() {
   // Delete plant
 
   // Plant button
-  
+
   const waterPlant = function (plants, id) {
-  const day = new Date();
-  const dayAndTimeNow = day.getTime();
-  
-  // Find plant
-  const updatedPlant = { ...plants.find((plant) => plant.id === id) };
-  const updatedIndex = plants.findIndex((plant) => plant.id === id);
-  // Get Plant last watered
-  const plantLastWatered = new Date(updatedPlant.lastWatered + "Z").getTime();
-  // Find water interval from last watered
-  if ((dayAndTimeNow - plantLastWatered) > 30000) {
-    updatedPlant.lastWatered = day.toISOString().split("Z")[0];
-    plants[updatedIndex] = updatedPlant;
-    setPlants([...plants]);
-  } else {
-    window.confirm(`${updatedPlant.name} is well watered, please wait 30 seconds`)
-  }
-}
+    const day = new Date();
+    const dayAndTimeNow = day.getTime();
+
+    // Find plant
+    const updatedPlant = { ...plants.find((plant) => plant.id === id) };
+    const updatedIndex = plants.findIndex((plant) => plant.id === id);
+    // Get Plant last watered
+    const plantLastWatered = new Date(updatedPlant.lastWatered + "Z").getTime();
+
+    // Find water interval from last watered
+    if (dayAndTimeNow - plantLastWatered > 30000) {
+      updatedPlant.lastWatered = day.toISOString().split("Z")[0];
+      plants[updatedIndex] = updatedPlant;
+      setPlants([...plants]);
+    } else {
+      window.confirm(
+        `${updatedPlant.name} is well watered, please wait 30 seconds.`
+      );
+    }
+  };
 
   // Water all plants
   const waterAllPlants = function (plants) {
@@ -68,19 +71,23 @@ export default function App() {
       <section className="nav">
         <Header key={1} />
       </section>
-      <section className="formSection">
-        <h4>Add Plant</h4>
-        <Form key={2} plants={plants} setPlants={setPlants} />
-      </section>
-      <section className="plantTable">
-        <Plants
-          key={3}
-          plants={plants}
-          waterPlant={waterPlant}
-          waterAllPlants={waterAllPlants}
-          deletePlant={deletePlant}
-        />
-      </section>
+      <div id="body">
+        <section className="formSection">
+          <div className="formLabel">
+            <h4>Add Plant</h4>
+            <Form key={plants} plants={plants} setPlants={setPlants} />
+          </div>
+        </section>
+        <section className="plantTable">
+          <Plants
+            key={plants.length}
+            plants={plants}
+            waterPlant={waterPlant}
+            waterAllPlants={waterAllPlants}
+            deletePlant={deletePlant}
+          />
+        </section>
+      </div>
     </div>
   );
 }
