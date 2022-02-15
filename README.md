@@ -7,10 +7,10 @@
     <!-- <img src="https://media.istockphoto.com/vectors/quiz-in-comic-pop-art-style-quiz-brainy-game-word-vector-illustration-vector-id1186386668?k=20&m=1186386668&s=612x612&w=0&h=tUvqWXoNa2OsJ1YsvZwr3JKOggtzfr_KHuopigindPA=" alt="midterm_group_5" alt="Logo" width="350" height="300"> -->
   </a>
 
-  <h1 align="center">Plant Reminder</h1>
+  <h3 align="center">Plant Reminder</h3>
 
   <p align="center">
-    Plant Reminder is a .Net Core (Web API) solution with a React front-end that enables a user to water plants remotely.
+    plant Reminder is a .Net Core (Web API) solution with a React front-end that enables a user to water plants remotely.
     <br />
     <a href="https://github.com/lpattersonn/PlantReminder"><strong>Explore the docs »</strong></a>
     <br />
@@ -40,7 +40,7 @@
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
-<!--     <li><a href="#contributing">Contributing</a></li> -->
+    <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
   </ol>
@@ -49,7 +49,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Plant Reminder is a .Net Core (Web API) solution with a React front-end that enables a user to water plants remotely.
+plant Reminder is a .Net Core (Web API) solution with a React front-end that enables a user to water plants remotely.
 
 <!-- ![app home page](https://github.com/lpattersonn/midterm-group-5/blob/master/public/ducuments/images/homepage.png?raw=true)
 ![app home page](https://github.com/lpattersonn/midterm-group-5/blob/master/public/ducuments/images/myprivatequiz.png?raw=true)
@@ -103,14 +103,14 @@ Don't forget to give the project a star! Thanks again!
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request -->
 
-5. Open a Pull Request
- <p align="right">(<a href="#top">back to top</a>)</p>
--->
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 <!-- CONTACT -->
 ## Contact
 
-Leshan Patterson - [@lpatters](https://ca.linkedin.com/in/lpattersonn)
+Leshan Patterson - [@lpatters](https://ca.linkedin.com/in/lpatters)
 
 Project Link: [https://github.com/lpattersonn/PlantReminder.git](https://github.com/lpattersonn/PlantReminder.git)
 
