@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import axios from "axios";
 
 export default function Form(props) {
+  
+
   const [form, setForm] = useState({
     img: "",
     name: "",
@@ -20,8 +22,7 @@ export default function Form(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const today = new Date();
-    const todaysTime = today;
+   
 
     console.log(typeof today);
 
@@ -30,11 +31,11 @@ export default function Form(props) {
         name: form.name,
         img: form.img,
         waterInterval: 21600,
-        lastWatered: new Date(),
+        lastWatered: Date().local,
       })
       .then((res) => {
         console.log(res.data);
-        props.setPlants([...props.plants, res.data]);
+        props.setPlants([res.data,...props.plants]);
       });
   };
 

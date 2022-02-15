@@ -34,5 +34,27 @@ namespace PlantReminder.Models
         plants.Add(plant);
         return plant;
       }
+
+      public PlantReminderRepo GetPlantByID(Guid id)
+      {
+        return FindBycondition(plants => PlantModel.id.Equals(id))
+          .FirstOrDefault();
+      }
+
+    // Delete owner
+    public void DeletePlant(PlantModel cmd)
+    {
+      throw new NotImplementedException();
+    }
+
+    public void SaveChanges()
+    {
+      throw new NotImplementedException();
+    }
+
+    bool IPlantReminderRepo.SaveChanges()
+    {
+      throw new NotImplementedException();
+    }
   }
 }

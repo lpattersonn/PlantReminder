@@ -25,15 +25,28 @@ export default function App() {
   // Delete plant
 
   // Plant button
+  
   const waterPlant = function (plants, id) {
-    const updatedPlant = { ...plants.find((plant) => plant.id === id) };
-    const updatedIndex = plants.findIndex((plant) => plant.id === id);
-    const day = new Date();
+    
+
+  const day = new Date();
+  const dayAndTimeNow = day.getTime();
+  const prevDate = plants.waterInterval;
+  console.log(prevDate, "This ONE");
+  // Find plant
+  const updatedPlant = { ...plants.find((plant) => plant.id === id) };
+  const updatedIndex = plants.findIndex((plant) => plant.id === id);
+  // Get Plant last watered
+  const plantLastWatered = new Date(updatedPlant.lastWatered + "Z").getTime();
+  // Find water interval from last watered
+  if ((dayAndTimeNow - plantLastWatered) > 30000) {
     updatedPlant.lastWatered = day.toISOString().split("Z")[0];
     plants[updatedIndex] = updatedPlant;
     setPlants([...plants]);
-    console.log(plants);
-  };
+  } else {
+    window.confirm(`${updatedPlant.name} is well watered, please wait 30 seconds`)
+  }
+}
 
   // Water all plants
   const waterAllPlants = function (plants) {
@@ -41,6 +54,16 @@ export default function App() {
       const id = plant.id;
       return waterPlant(plants, id);
     });
+  };
+
+  // Delete plant
+  const deletePlant = function (id) {
+    if (window.confirm("Are you sure you want to delete this plant?")) {
+      axios.delete(`/api/plants/${id}.json`).then((res) => {
+        console.log(res.body);
+        setPlants([...plants]);
+      });
+    }
   };
 
   return (
@@ -58,6 +81,7 @@ export default function App() {
           plants={plants}
           waterPlant={waterPlant}
           waterAllPlants={waterAllPlants}
+          deletePlant={deletePlant}
         />
       </section>
     </div>
