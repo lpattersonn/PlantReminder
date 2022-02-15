@@ -10,9 +10,7 @@ namespace PlantReminder.Models
      IEnumerable<PlantModel> GetAll();
 
      PlantModel Add(PlantModel plant);
-
-    Microsoft.AspNetCore.Mvc.ActionResult <PlantModel> GetCommandById(int id);
-     
+       
      void DeletePlant(PlantModel cmd);
   }
 }

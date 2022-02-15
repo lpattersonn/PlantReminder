@@ -3,6 +3,7 @@ namespace PlantReminder.Models
 {
   public class PlantModel
   {
+    public static object id { get; internal set; }
     public int Id {get; set;}
 
     public string img {get; set;}

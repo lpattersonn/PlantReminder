@@ -27,12 +27,9 @@ export default function App() {
   // Plant button
   
   const waterPlant = function (plants, id) {
-    
-
   const day = new Date();
   const dayAndTimeNow = day.getTime();
-  const prevDate = plants.waterInterval;
-  console.log(prevDate, "This ONE");
+  
   // Find plant
   const updatedPlant = { ...plants.find((plant) => plant.id === id) };
   const updatedIndex = plants.findIndex((plant) => plant.id === id);

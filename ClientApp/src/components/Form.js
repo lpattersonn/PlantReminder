@@ -41,7 +41,7 @@ export default function Form(props) {
 
   return (
     <seciton className="form">
-      <form className="form-inline" onSubmit={handleSubmit}>
+      <form className="form-inline" onSubmit={handleSubmit} >
         <div className="form-group mb-2">
           <label for="staticEmail2" class="sr-only">
             Image Adress
@@ -70,7 +70,7 @@ export default function Form(props) {
             placeholder="Plant Name"
           />
         </div>
-        <button type="submit" class="btn btn-dark mb-2">
+        <button type="submit" class="btn btn-dark mb-2" disabled={form.img.length<1 || form.name.length<1}>
           Add Plant
         </button>
       </form>

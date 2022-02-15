@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export default function Plants(props) {
   const plantList = props.plants.map((plant) => {
@@ -22,7 +22,23 @@ export default function Plants(props) {
     const id = plant.id;
 
     function plantButton(waterInterval, lastWatered) {
-      if (wellWatered(waterInterval, lastWatered)) {
+      const today = new Date();
+      const todaysDate = new Date(lastWatered + "Z");
+      const diffInWater = today.getTime() - todaysDate.getTime();
+
+      if (diffInWater > 30000 && diffInWater < waterInterval) {
+        return (
+          <button
+            type="button"
+            className="btn btn-warning"
+            onClick={() => {
+              props.waterPlant(props.plants, id);
+            }}
+          >
+            Thirsty 😠
+          </button>
+        );
+      } else if (wellWatered(waterInterval, lastWatered)) {
         return (
           <button
             type="button"
@@ -49,20 +65,31 @@ export default function Plants(props) {
       }
     }
 
+    function warningButton(waterInterval, lastWatered) {
+      const today = new Date();
+      const todaysDate = new Date(lastWatered + "Z");
+      const diffInWater = today.getTime() - todaysDate.getTime();
+      if (diffInWater > 30000 && diffInWater < waterInterval) {
+        return "#E6D54E";
+      } else {
+        return "#74E64E"
+      }
+    }
+
     // Table row style
     const waterStatus = {
       paddingBottom: "30px",
       border: "0.2em solid black",
       borderColor: wellWatered(plant.waterInterval, plant.lastWatered)
         ? "#E6534E"
-        : "#74E64E",
+        : warningButton(plant.waterInterval, plant.lastWatered),
     };
 
     const waterButtonStatus = {
       border: "0.2em solid black",
       borderColor: wellWatered(plant.waterInterval, plant.lastWatered)
         ? "#E6534E"
-        : "#74E64E",
+        : warningButton(plant.waterInterval, plant.lastWatered),
     };
 
     return (

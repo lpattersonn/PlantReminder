@@ -35,11 +35,8 @@ namespace PlantReminder.Models
         return plant;
       }
 
-      public PlantReminderRepo GetPlantByID(Guid id)
-      {
-        return FindBycondition(plants => PlantModel.id.Equals(id))
-          .FirstOrDefault();
-      }
+     
+
 
     // Delete owner
     public void DeletePlant(PlantModel cmd)
