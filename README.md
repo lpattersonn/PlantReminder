@@ -54,8 +54,8 @@ Plant Reminder is a .Net Core (Web API) solution with a React front-end that ena
 
 ### Built With
 
-- [.Net Core](https://nodejs.org/en/docs/es6/)
-- [React](https://nodejs.org/en/)
+- [.Net Core](https://dotnet.microsoft.com/en-us/download/visual-studio-sdks)
+- [React](https://reactjs.org/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
