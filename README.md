@@ -3,9 +3,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/lpattersonn/PlantReminder">
-   ![app home page](https://github.com/lpattersonn/PlantReminder/blob/master/ClientApp/images/page1.png?raw=true)
-  </a>
 
   <h3 align="center">Plant Reminder</h3>
 
@@ -52,6 +49,8 @@
 plant Reminder is a .Net Core (Web API) solution with a React front-end that enables a user to water plants remotely.
 
 ![app home page](https://github.com/lpattersonn/PlantReminder/blob/master/ClientApp/images/page1.png?raw=true)
+
+![app home page](https://github.com/lpattersonn/PlantReminder/blob/master/ClientApp/images/page2.png?raw=true)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
