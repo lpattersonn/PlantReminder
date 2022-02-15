@@ -10,12 +10,11 @@ export default function Form(props) {
     lastWatered: new Date(),
   });
 
-  const handleEmailChange = (e) => {
+  const handleEmailChange = (event) => {
     setForm({
-      [e.target.img]: e.target.value,
-      [e.target.name]: e.target.value,
-      waterInterval: 21600,
-      lastWatered: new Date(),
+      ...form,
+      [event.target.name]: event.target.value,
+      
     });
   };
 
