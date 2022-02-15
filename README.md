@@ -127,7 +127,7 @@ Project Link: [https://github.com/lpattersonn/PlantReminder.git](https://github.
 
 <!-- ACKNOWLEDGMENTS -->
 
-## Acknowledgmentsd
+## Acknowledgments
 
 - [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 - [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
