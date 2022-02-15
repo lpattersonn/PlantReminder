@@ -112,7 +112,7 @@ Don't forget to give the project a star! Thanks again!
 
 ## Contact
 
-Leshan Patterson - [@lpatters](https://ca.linkedin.com/in/lpatters)
+Leshan Patterson - [@lpattersonn](https://ca.linkedin.com/in/lpatters)
 
 Project Link: [https://github.com/lpattersonn/PlantReminder.git](https://github.com/lpattersonn/PlantReminder.git)
 
