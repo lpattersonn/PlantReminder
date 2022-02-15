@@ -75,6 +75,16 @@ plant Reminder is a .Net Core (Web API) solution with a React front-end that ena
    ```sh
    git clone https://github.com/lpattersonn/PlantReminder.git
    ```
+3. Install axios 
+   ```sh
+   npm install axios --save
+   ```
+
+   or
+
+   ```sh
+   yarn add axios
+   ```
 3. Install NPM packages
    ```sh
    npm i
