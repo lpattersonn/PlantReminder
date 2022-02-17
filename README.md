@@ -65,14 +65,15 @@ Plant Reminder is a .Net Core (Web API) solution with a React front-end that ena
 
 ### Installation
 
-1. Download .Net Core SDK
-   https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-3.1.416-windows-x64-installer
-
-2. Clone the repo
+1. Download .Net Core SDK.
    ```sh
-   git clone https://github.com/lpattersonn/PlantReminder.git
+   https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-3.1.416-windows-x64-installer
    ```
-3. Install axios 
+2. Fork and clone the repo.
+   ```sh
+   https://github.com/lpattersonn/PlantReminder.git
+   ```
+3. Install axios.
    ```sh
    npm install axios --save
    ```
@@ -82,23 +83,25 @@ Plant Reminder is a .Net Core (Web API) solution with a React front-end that ena
    ```sh
    yarn add axios
    ```
-3. Install NPM packages
+3. Install NPM packages.
    ```sh
    npm i
    ```
-4. In your terminal while in the cloned project enter the following command
+4. In your terminal while in the cloned project enter the following command.
    ```sh
    dotnet run
    ```
-5. After the server has initiated use http://localhost:5001 in the browser for the project to show.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+5. After the server has initiated use the provided URL in the browser for the project to show. 
+   ```sh
+   http://localhost:5001
+   ```
+   <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 
 ## Roadmap
 
-- [ ] Implement delete Plant Button
+- [X] Implement delete Plant Button
 
 See the [open issues](https://github.com/lpattersonn/PlantReminder/issues) for a full list of proposed features (and known issues).
 
