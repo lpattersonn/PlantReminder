@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import axios from "axios";
 
 export default function Form(props) {
-  
-
   const [form, setForm] = useState({
     img: "",
     name: "",
@@ -16,13 +14,11 @@ export default function Form(props) {
     setForm({
       ...form,
       [event.target.name]: event.target.value,
-      
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-   
 
     console.log(typeof today);
 
@@ -35,16 +31,16 @@ export default function Form(props) {
       })
       .then((res) => {
         console.log(res.data);
-        props.setPlants([res.data,...props.plants]);
+        props.setPlants([res.data, ...props.plants]);
       });
   };
 
   return (
     <seciton className="form">
-      <form className="form-inline" onSubmit={handleSubmit} >
+      <form className="form-inline" onSubmit={handleSubmit}>
         <div className="form-group mb-2">
           <label for="staticEmail2" class="sr-only">
-            Image Adress
+            Image URL
           </label>
           <input
             type="text"
@@ -53,7 +49,7 @@ export default function Form(props) {
             onChange={handleEmailChange}
             class="form-control"
             id="text"
-            placeholder="Enter Image Adress"
+            placeholder="Enter Image URL"
           />
         </div>
         <div className="form-group mx-sm-3 mb-2">
@@ -70,7 +66,11 @@ export default function Form(props) {
             placeholder="Enter Plant Name"
           />
         </div>
-        <button type="submit" class="btn btn-dark mb-2" disabled={form.img.length<1 || form.name.length<1}>
+        <button
+          type="submit"
+          class="btn btn-dark mb-2"
+          disabled={form.img.length < 1 || form.name.length < 1}
+        >
           Add Plant
         </button>
       </form>
