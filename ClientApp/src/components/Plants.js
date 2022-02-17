@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Plants(props) {
+
   const plantList = props.plants.map((plant) => {
     // Todays date
     const today = new Date();
@@ -8,11 +9,18 @@ export default function Plants(props) {
     // Plant index
     const plantIndex = props.plants.findIndex((thisPlant) => {
       thisPlant.id === plant.id;
-      props.setPlants(props.plants);
     });
 
-    const onePlusIndex = plantIndex + 1;
-    console.log(plantIndex, onePlusIndex);
+    const index = (plantID) => {
+      for (let i = 0; i < props.plants.length; i++) {
+        if (plantID === props.plants[i].id) {
+          return i;
+        }
+      }
+    };
+
+    console.log(index(plant.id));
+
     // Date from api
     function toString(watered) {
       const todaysDate = new Date(watered + "Z");
@@ -112,7 +120,7 @@ export default function Plants(props) {
             type="button"
             className="btn btn-secondary"
             onClick={() => {
-              props.deletePlant(onePlusIndex);
+              props.deletePlant(index(plant.id));
             }}
           >
             Remove Plant 😔
