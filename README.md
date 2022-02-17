@@ -91,9 +91,11 @@ Plant Reminder is a .Net Core (Web API) solution with a React front-end that ena
    ```sh
    dotnet run
    ```
-5. After the server has initiated use http://localhost:5001 in the browser for the project to show.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+5. After the server has initiated use the provided URL in the browser for the project to show. 
+   ```sh
+   http://localhost:5001
+   ```
+   <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- ROADMAP -->
 
