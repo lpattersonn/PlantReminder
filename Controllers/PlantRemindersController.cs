@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using PlantReminder.Models;
 
 namespace PlantReminder.Controllers
 {
@@ -23,23 +24,22 @@ public class PlantRemindersController : ControllerBase
     }
 
     
-// Get all plants
+// Get all plants api/plants
     [HttpGet]
     [Route("api/plants")]
     public IEnumerable<Models.PlantModel> GetAllPlants()
     {   
         return repository.GetAll();
     }
-  
-  // Get a plant [HttpDelete("{id}")]
-    [HttpGet]
-    [Route("api/plants/{id}")]
-    public ActionResult <Models.PlantModel> GetCommandById(int id)
+// Get plant api/plants/1
+      [HttpGet]
+      [Route("api/plants/{id}")]
+      public IEnumerable<PlantModel> GetPlant(int id)
     {
-        var plantItem = GetCommandById(id);
-        return Ok(plantItem);
+      return repository.GetPlant(id);
     }
-// Add a new plant
+  
+// Add a new plant api/plant
      [HttpPost]
         [Route("api/plant")]
         [Consumes("application/json")]
@@ -48,25 +48,13 @@ public class PlantRemindersController : ControllerBase
             return repository.Add(plant);
         }
 
-// Delete a plant [HttpDelete("{id}")]
-  [HttpDelete("{id}")]
-public async Task<HttpResponseMessage> Delete(int id)
-{
-    HttpResponseMessage returnMessage = new HttpResponseMessage();
-    try
+// Add a new plant api/plants/1
+    [HttpDelete("{id}")]
+    [Route("api/plants/{id}")]
+        public void DeletePlant(int id)
     {
-        // delete plant from database 
-        string message = ($"plant Deleted - {id}");
-        returnMessage = new HttpResponseMessage(HttpStatusCode.Created);
-        returnMessage.RequestMessage = new HttpRequestMessage(HttpMethod.Post, message);
+      repository.DeletePlant(id);
     }
-    catch (Exception ex)
-    {
-        returnMessage = new HttpResponseMessage(HttpStatusCode.ExpectationFailed);
-        returnMessage.RequestMessage = new HttpRequestMessage(HttpMethod.Post, ex.ToString());
-    }
-    return await Task.FromResult(returnMessage);
-}
   
   }
 }

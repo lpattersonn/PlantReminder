@@ -5,6 +5,14 @@ export default function Plants(props) {
     // Todays date
     const today = new Date();
 
+    // Plant index
+    const plantIndex = props.plants.findIndex((thisPlant) => {
+      thisPlant.id === plant.id;
+      props.setPlants(props.plants);
+    });
+
+    const onePlusIndex = plantIndex + 1;
+    console.log(plantIndex, onePlusIndex);
     // Date from api
     function toString(watered) {
       const todaysDate = new Date(watered + "Z");
@@ -35,7 +43,7 @@ export default function Plants(props) {
               props.waterPlant(props.plants, id);
             }}
           >
-            Thirsty 😠
+            Thirsty 🤔
           </button>
         );
       } else if (wellWatered(waterInterval, lastWatered)) {
@@ -72,7 +80,7 @@ export default function Plants(props) {
       if (diffInWater > 30000 && diffInWater < waterInterval) {
         return "#E6D54E";
       } else {
-        return "#74E64E"
+        return "#74E64E";
       }
     }
 
@@ -104,7 +112,7 @@ export default function Plants(props) {
             type="button"
             className="btn btn-secondary"
             onClick={() => {
-              props.deletePlant(plant.id);
+              props.deletePlant(onePlusIndex);
             }}
           >
             Remove Plant 😔

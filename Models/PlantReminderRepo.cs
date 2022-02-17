@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace PlantReminder.Models
 {
@@ -23,6 +24,12 @@ namespace PlantReminder.Models
         return plants;
       }
       
+        // Get plant by id
+     public IEnumerable<PlantModel> GetPlant(int id)
+     {
+      yield return plants[id];
+    }
+
       // Add new plant
       public PlantModel Add(PlantModel plant) 
       {
@@ -34,24 +41,12 @@ namespace PlantReminder.Models
         plants.Add(plant);
         return plant;
       }
+    
+      // Get plant by id
+      public void DeletePlant(int id)
+      {
+        plants.RemoveAt(id);
+      }
 
-     
-
-
-    // Delete owner
-    public void DeletePlant(PlantModel cmd)
-    {
-      throw new NotImplementedException();
-    }
-
-    public void SaveChanges()
-    {
-      throw new NotImplementedException();
-    }
-
-    bool IPlantReminderRepo.SaveChanges()
-    {
-      throw new NotImplementedException();
-    }
   }
 }

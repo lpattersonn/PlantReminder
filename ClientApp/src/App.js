@@ -33,6 +33,7 @@ export default function App() {
     // Find plant
     const updatedPlant = { ...plants.find((plant) => plant.id === id) };
     const updatedIndex = plants.findIndex((plant) => plant.id === id);
+
     // Get Plant last watered
     const plantLastWatered = new Date(updatedPlant.lastWatered + "Z").getTime();
 
@@ -59,29 +60,35 @@ export default function App() {
   // Delete plant
   const deletePlant = function (id) {
     if (window.confirm("Are you sure you want to delete this plant?")) {
-      axios.delete(`/api/plants/${id}.json`).then((res) => {
-        console.log(res.body);
-        setPlants([...plants]);
-      });
+      axios
+        .delete(`/api/plants/${id}`)
+        .then((res) => {
+          return axios.get("/api/plants");
+        })
+        .then((res) => {
+          console.log(res.data);
+          setPlants(res.data);
+        });
     }
   };
 
   return (
     <div>
       <section className="nav">
-        <Header key={1} />
+        <Header />
       </section>
       <div id="body">
         <section className="formSection">
           <div className="formLabel">
             <h4>Add Plant</h4>
-            <Form key={plants} plants={plants} setPlants={setPlants} />
+            <Form plants={plants} setPlants={setPlants} />
           </div>
         </section>
         <section className="plantTable">
           <Plants
             key={plants.length}
             plants={plants}
+            setPlants={setPlants}
             waterPlant={waterPlant}
             waterAllPlants={waterAllPlants}
             deletePlant={deletePlant}
