@@ -1,3 +1,4 @@
+// Imports
 import React, { useState } from "react";
 
 import axios from "axios";
@@ -10,18 +11,17 @@ export default function Form(props) {
     lastWatered: new Date(),
   });
 
-  const handleEmailChange = (event) => {
+  // Change from state
+  const handleValueChange = (event) => {
     setForm({
       ...form,
       [event.target.name]: event.target.value,
     });
   };
 
+  // Add plant
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log(typeof today);
-
     axios
       .post("/api/plant", {
         name: form.name,
@@ -31,7 +31,7 @@ export default function Form(props) {
       })
       .then((res) => {
         console.log(res.data);
-        props.setPlants([res.data, ...props.plants]);
+        props.setPlants([...props.plants, res.data]);
       });
   };
 
@@ -46,7 +46,7 @@ export default function Form(props) {
             type="text"
             name="img"
             value={form.img}
-            onChange={handleEmailChange}
+            onChange={handleValueChange}
             class="form-control"
             id="text"
             placeholder="Enter Image URL"
@@ -60,7 +60,7 @@ export default function Form(props) {
             type="text"
             name="name"
             value={form.name}
-            onChange={handleEmailChange}
+            onChange={handleValueChange}
             class="form-control"
             id="inputPassword2"
             placeholder="Enter Plant Name"
