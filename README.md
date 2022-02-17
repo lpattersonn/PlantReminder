@@ -101,7 +101,7 @@ Plant Reminder is a .Net Core (Web API) solution with a React front-end that ena
 
 ## Roadmap
 
-- [ ] Implement delete Plant Button
+- [X] Implement delete Plant Button
 
 See the [open issues](https://github.com/lpattersonn/PlantReminder/issues) for a full list of proposed features (and known issues).
 
