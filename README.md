@@ -65,15 +65,15 @@ Plant Reminder is a .Net Core (Web API) solution with a React front-end that ena
 
 ### Installation
 
-1. Download .Net Core SDK
+1. Download .Net Core SDK.
    ```sh
    https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-3.1.416-windows-x64-installer
    ```
-2. Fork and clone the repo 
+2. Fork and clone the repo.
    ```sh
    https://github.com/lpattersonn/PlantReminder.git
    ```
-3. Install axios 
+3. Install axios.
    ```sh
    npm install axios --save
    ```
@@ -83,11 +83,11 @@ Plant Reminder is a .Net Core (Web API) solution with a React front-end that ena
    ```sh
    yarn add axios
    ```
-3. Install NPM packages
+3. Install NPM packages.
    ```sh
    npm i
    ```
-4. In your terminal while in the cloned project enter the following command
+4. In your terminal while in the cloned project enter the following command.
    ```sh
    dotnet run
    ```
