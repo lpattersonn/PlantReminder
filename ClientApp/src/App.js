@@ -9,7 +9,7 @@ import axios from "axios";
 import "./custom.css";
 import { getAllPlants } from "./helper/helper.js";
 
-// App
+// App component
 export default function App() {
   const [plants, setPlants] = useState([]);
 
@@ -22,10 +22,7 @@ export default function App() {
     };
   }, []);
 
-  // Delete plant
-
-  // Plant button
-
+  // Water plant
   const waterPlant = function (plants, id) {
     const day = new Date();
     const dayAndTimeNow = day.getTime();

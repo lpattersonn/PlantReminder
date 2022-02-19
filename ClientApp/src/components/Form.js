@@ -1,9 +1,10 @@
 // Imports
 import React, { useState } from "react";
-
 import axios from "axios";
 
+// Form component
 export default function Form(props) {
+  // Form state
   const [form, setForm] = useState({
     img: "",
     name: "",
@@ -11,7 +12,7 @@ export default function Form(props) {
     lastWatered: new Date(),
   });
 
-  // Change from state
+  // Change form state
   const handleValueChange = (event) => {
     setForm({
       ...form,

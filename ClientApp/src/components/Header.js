@@ -1,5 +1,7 @@
+// Imports
 import React from "react";
 
+// Header component
 export default function Header() {
   return (
     <nav>

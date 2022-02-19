@@ -1,7 +1,8 @@
+// Imports
 import React from "react";
 
+// Plant component
 export default function Plants(props) {
-
   const plantList = props.plants.map((plant) => {
     // Todays date
     const today = new Date();
